@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/toothpicks/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/toothpicks/static/js/main.79a33466.chunk.js",
+    "main.js.map": "/toothpicks/static/js/main.79a33466.chunk.js.map",
+    "runtime~main.js": "/toothpicks/static/js/runtime~main.955d9fdd.js",
+    "runtime~main.js.map": "/toothpicks/static/js/runtime~main.955d9fdd.js.map",
+    "static/js/2.5d9e8d3e.chunk.js": "/toothpicks/static/js/2.5d9e8d3e.chunk.js",
+    "static/js/2.5d9e8d3e.chunk.js.map": "/toothpicks/static/js/2.5d9e8d3e.chunk.js.map",
+    "index.html": "/toothpicks/index.html",
+    "precache-manifest.2d4013f58be8f2d0fbbbe00a76f65781.js": "/toothpicks/precache-manifest.2d4013f58be8f2d0fbbbe00a76f65781.js",
+    "service-worker.js": "/toothpicks/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/toothpicks/static/css/main.5ecd60fb.chunk.css.map"
+  }
+}
