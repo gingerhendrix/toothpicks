@@ -1,24 +1,9 @@
-import React, {useMemo, useState, useRef, useEffect} from 'react';
+import React, {useMemo} from 'react';
+import useIntervalTimer from '@gingerhendrix/use-interval-timer';
+import Controls from '@gingerhendrix/react-animation-controls';
+import 'rc-slider/assets/index.css';
 import {ToothpickPattern} from '../lib/pattern';
 import Component from './Component';
-
-const useTick = (duration: number, max: number) => {
-  const [frame, setFrame] = useState(1);
-  const frameRef = useRef(frame);
-  useEffect(() => {
-    const update = () => {
-      frameRef.current = frameRef.current + 1;
-      setFrame(frameRef.current);
-      if(frameRef.current < max) {
-        window.setTimeout(update, duration);
-      }
-    }
-    const interval = window.setTimeout(update, duration);
-    return () => window.clearTimeout(interval);
-  }, [duration, max]);
-
-  return frame;
-}
 
 const Container: React.FC = () => {
   const pattern = useMemo(() => {
@@ -26,15 +11,22 @@ const Container: React.FC = () => {
     (window as any).pattern = pattern;
     return pattern;
   }, []);
+  const max = 100;
+  const framerate = 10;
 
-  const tick = useTick(100, 1000)
-  if(tick > pattern.generations.length) {
+  const {tick, started, stop, start, setTick} = useIntervalTimer({interval: 1000/framerate, maxTicks: max})
+  while(tick > pattern.generations.length) {
     pattern.buildNextGeneration();
   }
   const size = 800;
-  const scale = (0.9*size)/pattern.generations.length;
+  const scale = (0.9*size)/(tick + 1);
 
-  return <Component pattern={pattern} size={size} scale={scale} />;
+  return (
+    <div>
+      <Component pattern={pattern} size={size} scale={scale} generation={tick} />
+      <Controls n={tick} max={max} started={started} start={start} stop={stop} setTick={setTick} />
+    </div>
+  );
 }
 
 export default Container;

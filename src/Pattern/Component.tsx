@@ -38,13 +38,14 @@ interface ComponentProps {
   pattern: ToothpickPattern,
   size: number,
   scale: number,
+  generation: number,
 }
 
-const Component: React.FC<ComponentProps> = ({pattern, size, scale}) => (
+const Component: React.FC<ComponentProps> = ({pattern, size, scale, generation}) => (
   <svg width={size} height={size} style={{backgroundColor: 'black'}}>
     <g transform={`translate(${size/2}, ${size/2}) scale(${scale})`} >
     {
-      pattern.generations.map((generation, idx) =>
+      pattern.generations.slice(0, generation).map((generation, idx) =>
         <Generation generation={generation} key={idx} current={idx === pattern.generations.length - 1} />
       )
     }
