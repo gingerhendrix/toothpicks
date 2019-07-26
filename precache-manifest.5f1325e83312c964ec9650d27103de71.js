@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e2a7907bf65891c7ae84929d73fda7e4",
+    "revision": "780eb896977bfc2819e1cd6fd359a62a",
     "url": "/toothpicks/index.html"
   },
   {
-    "revision": "6365570918b4a5b6f5e4",
+    "revision": "c174c1180e95994ecc30",
     "url": "/toothpicks/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/toothpicks/static/js/2.5d9e8d3e.chunk.js"
   },
   {
-    "revision": "6365570918b4a5b6f5e4",
-    "url": "/toothpicks/static/js/main.79a33466.chunk.js"
+    "revision": "c174c1180e95994ecc30",
+    "url": "/toothpicks/static/js/main.bd555a20.chunk.js"
   },
   {
     "revision": "08f7169a69cea4f52814",
