@@ -5,7 +5,7 @@ const Line: React.FC<{ends: [Point, Point], current: boolean}> = ({ends: [start,
   <line x1={start.x} y1={start.y} x2={finish.x} y2={finish.y} style={{
     stroke: current ? 'rgb(0,0,255)' : 'rgb(0,255,0)',
     transition: 'stroke 4s',
-    strokeWidth:  0.5,
+    strokeWidth:  0.1,
   }} />
 
 const GenerationBase: React.FC<{generation: ToothpickGeneration, current: boolean}> = ({generation, current=false}) => (

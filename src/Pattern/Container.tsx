@@ -11,8 +11,8 @@ const Container: React.FC = () => {
     (window as any).pattern = pattern;
     return pattern;
   }, []);
-  const max = 100;
-  const framerate = 10;
+  const max = 256;
+  const framerate = 2;
 
   const {tick, started, stop, start, setTick} = useIntervalTimer({interval: 1000/framerate, maxTicks: max})
   while(tick > pattern.generations.length) {
